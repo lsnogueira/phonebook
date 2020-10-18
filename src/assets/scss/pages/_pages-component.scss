@@ -1,0 +1,49 @@
+@use '../helpers/rem' as r;
+
+app-pages {
+  $sidenav-width: r.rem(238);
+
+  .mat-sidenav-container {
+    height: 100%;
+  }
+
+  .mat-sidenav {
+    min-width: $sidenav-width;
+    max-width: $sidenav-width;
+    .buttons-wrapper {
+
+    }
+  }
+
+  .mat-drawer-inner-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: #212121;
+
+    button {
+      height: 52px;
+      width: 100%;
+      // color: #fff !important;
+    }
+  }
+
+  .mat-sidenav-content {
+    margin-left: $sidenav-width;
+    background: url("../../images/Wave-10s-1280px.svg") no-repeat 0 -200%;
+  }
+
+  .mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+
+    }
+
+    .appointment-button {
+      // al: flex-end;
+    }
+  }
+}

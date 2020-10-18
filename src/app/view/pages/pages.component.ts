@@ -1,15 +1,51 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { BottomSheetAddAppointmentsComponent } from 'src/app/shared/components/bottom-sheet-add-appointments/bottom-sheet-add-appointments.component';
 
 @Component({
   selector: 'app-pages',
-  templateUrl: './pages.component.html',
-  styleUrls: ['./pages.component.scss']
+  template: `
+    <mat-sidenav-container>
+      <mat-sidenav mode="side" opened>
+        <img
+          src="assets/images/phone-book.svg"
+          alt="agenda telefonica"
+          width="105"
+        />
+        <div class="buttons-wrapper">
+          <button mat-button color="primary">Agendamentos</button>
+          <button mat-button disabled color="primary">Contatos</button>
+          <button mat-button disabled color="primary">
+            Verificar Operadora
+          </button>
+          <button mat-button disabled color="primary">
+            Agendar telefonemas
+          </button>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <mat-toolbar>
+          <span class="title">Phonebook</span>
+          <button
+            class="appointment-button"
+            mat-raised-button
+            color="primary"
+            (click)="openBottomSheet()"
+          >
+            Criar agendamento +
+          </button>
+        </mat-toolbar>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  `,
 })
 export class PagesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bottomSheet: MatBottomSheet) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  openBottomSheet(): void {
+    this.bottomSheet.open(BottomSheetAddAppointmentsComponent);
   }
-
 }
