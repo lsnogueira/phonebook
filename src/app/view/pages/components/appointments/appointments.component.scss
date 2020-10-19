@@ -26,4 +26,8 @@ section {
     display: flex;
     flex-direction: column;
   }
+
+  app-appointment-item {
+    margin-bottom: r.rem(20);
+  }
 }
