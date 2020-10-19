@@ -4,6 +4,8 @@ import { BottomSheetAddAppointmentsComponent } from './components/bottom-sheet-a
 import { AppMaterialModule } from '../app-material.module';
 import { AppointmentItemComponent } from './components/appointment-item/appointment-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LayoutModule } from '@angular/cdk/layout';
+import { ResponsiveSidenavDirective } from './directives/responsive-sidenav/responsive-sidenav.directive';
 
 const components = [
   BottomSheetAddAppointmentsComponent,
@@ -11,8 +13,14 @@ const components = [
 ];
 
 @NgModule({
-  declarations: [...components],
-  imports: [CommonModule, AppMaterialModule, FormsModule, ReactiveFormsModule],
-  exports: [...components],
+  declarations: [...components, ResponsiveSidenavDirective],
+  imports: [
+    CommonModule,
+    AppMaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    LayoutModule,
+  ],
+  exports: [...components, ResponsiveSidenavDirective],
 })
 export class SharedModule {}

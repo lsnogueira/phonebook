@@ -4,7 +4,12 @@
   justify-content: space-between;
 }
 
+.mat-form-field {
+  max-width: r.rem(150);
+}
+
 .full-field {
+  max-width: r.rem(538);
   width: 100%;
 }
 

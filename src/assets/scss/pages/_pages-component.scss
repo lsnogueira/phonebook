@@ -10,9 +10,6 @@ app-pages {
   .mat-sidenav {
     min-width: $sidenav-width;
     max-width: $sidenav-width;
-    .buttons-wrapper {
-
-    }
   }
 
   .mat-drawer-inner-container {
@@ -25,12 +22,10 @@ app-pages {
     button {
       height: 52px;
       width: 100%;
-      // color: #fff !important;
     }
   }
 
   .mat-sidenav-content {
-    margin-left: $sidenav-width;
     background: url("../../images/Wave-10s-1280px.svg") no-repeat 0 -200%;
   }
 
@@ -38,12 +33,9 @@ app-pages {
     display: flex;
     justify-content: space-between;
 
-    .title {
-
-    }
-
-    .appointment-button {
-      // al: flex-end;
+    .menu-information {
+      display: flex;
+      align-items: center;
     }
   }
 }

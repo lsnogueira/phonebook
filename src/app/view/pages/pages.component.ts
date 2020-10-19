@@ -6,7 +6,7 @@ import { BottomSheetAddAppointmentsComponent } from 'src/app/shared/components/b
   selector: 'app-pages',
   template: `
     <mat-sidenav-container>
-      <mat-sidenav mode="side" opened>
+      <mat-sidenav #sidenav [permanentAt]="960" mode="side" opened>
         <img
           src="assets/images/phone-book.svg"
           alt="agenda telefonica"
@@ -25,9 +25,15 @@ import { BottomSheetAddAppointmentsComponent } from 'src/app/shared/components/b
           </button>
         </div>
       </mat-sidenav>
+
       <mat-sidenav-content>
         <mat-toolbar>
-          <span class="title">Phonebook</span>
+          <div class="menu-information">
+            <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <span class="title">Phonebook</span>
+          </div>
           <button
             class="appointment-button"
             mat-raised-button
