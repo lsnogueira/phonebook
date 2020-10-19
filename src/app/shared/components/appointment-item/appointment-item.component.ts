@@ -48,10 +48,6 @@ export class AppointmentItemComponent implements OnInit {
     });
   }
 
-  get form(): { [key: string]: AbstractControl } {
-    return this.formGroup.controls;
-  }
-
   editItem(): void {
     const telNumbers = this.generalService.generateTelNumbersForPayload(this.form.telNumbers.value);
 
@@ -72,4 +68,13 @@ export class AppointmentItemComponent implements OnInit {
       this.stateHelper.setRemakeRequestValue = true;
     });
   }
+
+  phoneNumberControlHelper(control: AbstractControl): void {
+    control.setValue(control.value.replace(/[^\d\,]/g, ''));
+  }
+
+  get form(): { [key: string]: AbstractControl } {
+    return this.formGroup.controls;
+  }
+
 }

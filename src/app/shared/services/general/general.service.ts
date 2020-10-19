@@ -12,7 +12,7 @@ export class GeneralService {
     const result = [];
 
     numbersInputed.forEach((telNumer) => {
-      if (telNumer.length === 9) {
+      if (telNumer.length >= 9 && telNumer.length <= 13) {
         result.push(Number(telNumer));
       }
     });

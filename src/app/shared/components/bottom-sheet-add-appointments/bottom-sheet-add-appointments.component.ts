@@ -20,6 +20,7 @@ export class BottomSheetAddAppointmentsComponent implements OnInit {
   step = 0;
   enableSecondStep = false;
   enableThirdStep = false;
+  isImportCSV = false;
 
   formGroup: FormGroup;
 
@@ -43,7 +44,13 @@ export class BottomSheetAddAppointmentsComponent implements OnInit {
           return;
         }
 
-        const telNumbers = this.generalService.generateTelNumbersForPayload(this.form.telNumbers.value);
+        let telNumbers: number[];
+
+        if (!this.isImportCSV) {
+          telNumbers = this.generalService.generateTelNumbersForPayload(this.form.telNumbers.value);
+        } else {
+          telNumbers = this.form.telNumbers.value;
+        }
 
         if (!telNumbers.length) {
           this.form.telNumbers.reset();
@@ -87,6 +94,30 @@ export class BottomSheetAddAppointmentsComponent implements OnInit {
     this.bottomSheetRef.dismiss();
   }
 
+  uploadFile(fileEvt: Event): void {
+    const file = (fileEvt.target as HTMLInputElement).files[0];
+    const reader = new FileReader();
+
+    if (file.name.endsWith('.csv')) {
+      this.isImportCSV = true;
+      reader.readAsText(file);
+
+      reader.onload = () => {
+        const fileData = reader.result;
+        const list = (fileData as string).split('\n');
+        const result = [];
+
+        list.forEach((telNumber) => {
+          result.push(Number(telNumber.replace(/[^\d\,]/g, '')));
+        });
+
+        this.form.telNumbers.setValue(result);
+        this.form.telNumbers.clearValidators();
+        this.form.telNumbers.updateValueAndValidity();
+      };
+    }
+  }
+
   get form(): { [key: string]: AbstractControl } {
     return this.formGroup.controls;
   }
@@ -98,7 +129,7 @@ export class BottomSheetAddAppointmentsComponent implements OnInit {
       }),
       sendTime: new FormControl('', { validators: [Validators.required] }),
       telNumbers: new FormControl([], {
-        validators: [Validators.required, Validators.minLength(9)],
+        validators: [Validators.required],
       }),
     });
   }

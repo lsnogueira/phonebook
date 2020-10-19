@@ -33,7 +33,11 @@
       <mat-card-content>
         <mat-form-field>
           <mat-label>Telefones</mat-label>
-          <textarea matInput formControlName="telNumbers"></textarea>
+          <textarea
+            matInput
+            formControlName="telNumbers"
+            (keydown)="phoneNumberControlHelper(form?.telNumbers)"
+          ></textarea>
         </mat-form-field>
         <mat-form-field class="full-field">
           <mat-label>SMS</mat-label>

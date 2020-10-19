@@ -54,13 +54,20 @@
           <textarea
             matInput
             formControlName="telNumbers"
-            tabindex="-1"
+            minlength="9"
           ></textarea>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" (click)="nextStep()">
+        <button mat-raised-button color="primary" (click)="fileInput.click()">
           Importar CSV
         </button>
+        <input
+          type="file"
+          #fileInput
+          hidden
+          accept=".csv"
+          (change)="uploadFile($event)"
+        />
       </div>
 
       <mat-action-row>
