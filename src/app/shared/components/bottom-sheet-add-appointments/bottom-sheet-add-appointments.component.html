@@ -1,1 +1,91 @@
-<p>bottom-sheet-add-appointments works!</p>
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Mensagem</mat-panel-title>
+      <mat-panel-description>
+        SMS que será enviada
+        <mat-icon>message</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field class="full-field">
+      <mat-label>SMS</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+
+    <mat-action-row>
+      <button mat-raised-button color="primary" (click)="nextStep()">
+        Próximo
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel
+    [expanded]="step === 1"
+    [disabled]="!enableSecondStep"
+    (opened)="setStep(1)"
+    hideToggle
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>Destinatário</mat-panel-title>
+      <mat-panel-description>
+        Quem vai receber o SMS
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>
+      Aqui você pode digitar os telefones separados por virgula ou importar um
+      arquivo CSV.
+    </p>
+
+    <div class="controls-divisor">
+      <mat-form-field>
+        <mat-label>Telefones</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="nextStep()">
+        Importar CSV
+      </button>
+    </div>
+
+    <mat-action-row>
+      <button mat-raised-button color="warn" (click)="prevStep()">
+        Anterior
+      </button>
+      <button mat-raised-button color="primary" (click)="nextStep()">
+        Próximo
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel
+    [expanded]="step === 2"
+    [disabled]="!enableThirdStep"
+    (opened)="setStep(2)"
+    hideToggle
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>Horário de envio</mat-panel-title>
+      <mat-panel-description>
+        Quando será enviado o(s) SMS(s)
+        <mat-icon>date_range</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <mat-label>Horário de envio</mat-label>
+      <input matInput type="datetime-local" />
+    </mat-form-field>
+    <!-- <mat-datepicker #picker></mat-datepicker> -->
+
+    <mat-action-row>
+      <button mat-raised-button color="warn" (click)="prevStep()">
+        Anterior
+      </button>
+      <button mat-raised-button color="primary" (click)="nextStep()">
+        Agendar
+      </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>

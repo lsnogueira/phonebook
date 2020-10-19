@@ -13,7 +13,9 @@ import { BottomSheetAddAppointmentsComponent } from 'src/app/shared/components/b
           width="105"
         />
         <div class="buttons-wrapper">
-          <button mat-button color="primary">Agendamentos</button>
+          <button mat-button color="primary" [routerLink]="['/agendamentos']">
+            Agendamentos
+          </button>
           <button mat-button disabled color="primary">Contatos</button>
           <button mat-button disabled color="primary">
             Verificar Operadora
@@ -35,12 +37,12 @@ import { BottomSheetAddAppointmentsComponent } from 'src/app/shared/components/b
             Criar agendamento +
           </button>
         </mat-toolbar>
+        <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   `,
 })
 export class PagesComponent implements OnInit {
-
   constructor(private bottomSheet: MatBottomSheet) {}
 
   ngOnInit(): void {}

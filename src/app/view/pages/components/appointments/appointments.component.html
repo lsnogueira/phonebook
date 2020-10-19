@@ -1,1 +1,9 @@
-<p>appointments works!</p>
+<section>
+  <ng-container *ngIf="true; else elseTemplate">
+    <div class="empty-wrapper">
+      <mat-icon>announcement</mat-icon>
+      <h1>Sem agendamentos no momento</h1>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate> </ng-template>
+</section>

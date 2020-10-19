@@ -7,6 +7,10 @@ import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
   styleUrls: ['./bottom-sheet-add-appointments.component.scss'],
 })
 export class BottomSheetAddAppointmentsComponent implements OnInit {
+  step = 0;
+  enableSecondStep = false;
+  enableThirdStep = false;
+
   constructor(
     private bottomSheetRef: MatBottomSheetRef<
       BottomSheetAddAppointmentsComponent
@@ -14,6 +18,24 @@ export class BottomSheetAddAppointmentsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+
+  setStep(index: number): void {
+    this.step = index;
+  }
+
+  nextStep(): void {
+    this.step++;
+
+    if (this.step === 1) {
+      this.enableSecondStep = true;
+    } else if (this.step === 2) {
+      this.enableThirdStep = true;
+    }
+  }
+
+  prevStep(): void {
+    this.step--;
+  }
 
   close(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();
