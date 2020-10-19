@@ -80,3 +80,29 @@
   justify-content: flex-end;
   margin: 0;
 }
+
+@media screen and (max-width: 764px) {
+  .text-wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    min-width: r.rem(75);
+  }
+
+  .data-info {
+    font-size: r.rem(14) !important;
+    margin-right: r.rem(5) !important;
+  }
+
+  .controls-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: r.rem(88);
+
+    button {
+      margin-left: 0 !important;
+    }
+  }
+}
