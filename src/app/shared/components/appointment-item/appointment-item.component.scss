@@ -1,0 +1,76 @@
+@use '../../../../assets/scss/helpers/rem' as r;
+
+.mat-card {
+  transition: background-color 1.2s;
+
+  &.bg-purple {
+    background-color: #8b5ae2;
+  }
+
+  .mat-card-header {
+    align-items: center;
+
+    .mat-card-avatar {
+      .mat-icon {
+        width: r.rem(40);
+        height: r.rem(40);
+
+        font-size: r.rem(40);
+      }
+    }
+
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      margin-right: auto;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .title,
+    .sub-title {
+      display: inline-block;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .sub-title {
+      font-size: 14px;
+    }
+
+    .data-info {
+      font-size: 16px;
+      margin-right: 30px;
+    }
+
+    .mat-mini-fab:last-child {
+      margin-left: 15px;
+    }
+
+    .dark-button {
+      background-color: #303030;
+    }
+  }
+}
+
+.mat-card-content {
+  margin-top: 16px;
+  margin-bottom: 0;
+
+  .mat-form-field {
+    width: 100%;
+  }
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}

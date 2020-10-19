@@ -21,4 +21,9 @@ section {
       height: r.rem(50);
     }
   }
+
+  .appointments-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }

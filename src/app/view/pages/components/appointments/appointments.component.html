@@ -1,9 +1,16 @@
 <section>
-  <ng-container *ngIf="true; else elseTemplate">
+  <ng-container *ngIf="!appointments; else withData">
     <div class="empty-wrapper">
       <mat-icon>announcement</mat-icon>
       <h1>Sem agendamentos no momento</h1>
     </div>
   </ng-container>
-  <ng-template #elseTemplate> </ng-template>
+  <ng-template #withData>
+    <div class="appointments-wrapper">
+      <app-appointment-item
+        *ngFor="let appointment of appointments; trackBy: appointment?.id"
+        [setItem]="appointment"
+      ></app-appointment-item>
+    </div>
+  </ng-template>
 </section>

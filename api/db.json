@@ -1,5 +1,10 @@
 {
   "appointments": [
-    { "id": 1, "telNumbers": [953823288], "shippingTime": "20/12/2020" }
+    {
+      "id": 1,
+      "telNumbers": [953823288],
+      "message": "bla bla bla bla bla bla bla bla bla bla bla bla bla",
+      "shippingTime": "20/12/2020"
+    }
   ]
 }
