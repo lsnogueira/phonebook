@@ -69,8 +69,9 @@ export class AppointmentItemComponent implements OnInit {
     });
   }
 
-  phoneNumberControlHelper(control: AbstractControl): void {
-    control.setValue(control.value.replace(/[^\d\,]/g, ''));
+  phoneNumberControlHelper(control: AbstractControl, event): void {
+    const filteredValue = event.target.value.replace(/[^\d\,]/g, '');
+    control.setValue(filteredValue);
   }
 
   get form(): { [key: string]: AbstractControl } {

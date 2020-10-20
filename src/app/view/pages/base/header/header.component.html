@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <div class="menu-information">
+    <button mat-icon-button (click)="clickMenu.emit()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="title">Phonebook</span>
+  </div>
+  <button
+    class="appointment-button"
+    mat-raised-button
+    color="primary"
+    (click)="clickBottomSheet.emit()"
+  >
+    Criar agendamento +
+  </button>
+</mat-toolbar>

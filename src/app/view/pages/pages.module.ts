@@ -6,10 +6,11 @@ import { AppointmentsComponent } from './components/appointments/appointments.co
 import { PagesComponent } from './pages.component';
 import { AppMaterialModule } from 'src/app/app-material.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { HeaderComponent } from './base/header/header.component';
 
 
 @NgModule({
-  declarations: [AppointmentsComponent, PagesComponent],
+  declarations: [AppointmentsComponent, PagesComponent, HeaderComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

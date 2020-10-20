@@ -118,6 +118,11 @@ export class BottomSheetAddAppointmentsComponent implements OnInit {
     }
   }
 
+  phoneNumberControlHelper(control: AbstractControl, event): void {
+    const filteredValue = event.target.value.replace(/[^\d\,]/g, '');
+    control.setValue(filteredValue);
+  }
+
   get form(): { [key: string]: AbstractControl } {
     return this.formGroup.controls;
   }

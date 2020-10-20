@@ -36,7 +36,8 @@
           <textarea
             matInput
             formControlName="telNumbers"
-            (keydown)="phoneNumberControlHelper(form?.telNumbers)"
+            (input)="phoneNumberControlHelper(form?.telNumbers, $event)"
+            (blur)="phoneNumberControlHelper(form?.telNumbers, $event)"
           ></textarea>
         </mat-form-field>
         <mat-form-field class="full-field">

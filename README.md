@@ -2,6 +2,11 @@
 
 Web app para agendamento de SMS criado com Angular versão 10.1.7.
 
+## Descrição
+
+Para o agendamento de SMS o usuário poderá informar um ou mais números separados por vírgular ou utilizar um arquivo CSV com números de telefone.
+
+Arquivo em que utilizei de exemplo para importação [aqui](https://docs.google.com/spreadsheets/d/10ryiVin0ZWjjv_sYc9voIzXKZx97QdmThxbtmwgwynU/edit?usp=sharing).
 
 ## Como iniciar o projeto?
 Antes é necessário instalar a dependência [json-server](https://www.npmjs.com/package/json-server) globalmente, ela está sendo utilizada para persistência dos dados.

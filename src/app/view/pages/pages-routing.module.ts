@@ -4,6 +4,7 @@ import { PagesComponent } from './pages.component';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'agendamentos', pathMatch: 'full' },
   {
     path: '',
     component: PagesComponent,

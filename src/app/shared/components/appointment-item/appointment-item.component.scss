@@ -1,10 +1,11 @@
 @use '../../../../assets/scss/helpers/rem' as r;
+@use '../../../../assets/scss/utils/colors' as c;
 
 .mat-card {
   transition: background-color 1.2s;
 
   &.bg-purple {
-    background-color: #8b5ae2;
+    background-color: c.$light-purple;
   }
 
   .mat-card-header {
@@ -55,7 +56,7 @@
     }
 
     .dark-button {
-      background-color: #303030;
+      background-color: c.$black-components;
     }
   }
 

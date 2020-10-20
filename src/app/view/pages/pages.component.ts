@@ -16,33 +16,27 @@ import { BottomSheetAddAppointmentsComponent } from 'src/app/shared/components/b
           <button mat-button color="primary" [routerLink]="['/agendamentos']">
             Agendamentos
           </button>
-          <button mat-button disabled color="primary">Contatos</button>
-          <button mat-button disabled color="primary">
-            Verificar Operadora
-          </button>
-          <button mat-button disabled color="primary">
-            Agendar telefonemas
-          </button>
+          <div matTooltip="Em breve!" matTooltipPosition="after">
+            <button mat-button disabled color="primary">Contatos</button>
+          </div>
+          <div matTooltip="Em breve!" matTooltipPosition="after">
+            <button mat-button disabled color="primary">
+              Verificar Operadora
+            </button>
+          </div>
+          <div matTooltip="Em breve!" matTooltipPosition="after">
+            <button mat-button disabled color="primary">
+              Agendar telefonemas
+            </button>
+          </div>
         </div>
       </mat-sidenav>
 
       <mat-sidenav-content>
-        <mat-toolbar>
-          <div class="menu-information">
-            <button mat-icon-button (click)="sidenav.toggle()">
-              <mat-icon>menu</mat-icon>
-            </button>
-            <span class="title">Phonebook</span>
-          </div>
-          <button
-            class="appointment-button"
-            mat-raised-button
-            color="primary"
-            (click)="openBottomSheet()"
-          >
-            Criar agendamento +
-          </button>
-        </mat-toolbar>
+        <app-header
+          (clickMenu)="sidenav.toggle()"
+          (clickBottomSheet)="openBottomSheet()"
+        ></app-header>
         <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>

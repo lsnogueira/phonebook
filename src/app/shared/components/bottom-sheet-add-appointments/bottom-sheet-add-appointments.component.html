@@ -44,7 +44,7 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <p>
-        Aqui você pode digitar os telefones separados por virgula ou importar um
+        Aqui você pode digitar os telefones <b>separados por virgula</b> ou importar um
         arquivo CSV.
       </p>
 
@@ -55,6 +55,8 @@
             matInput
             formControlName="telNumbers"
             minlength="9"
+            (input)="phoneNumberControlHelper(form?.telNumbers, $event)"
+            (blur)="phoneNumberControlHelper(form?.telNumbers, $event)"
           ></textarea>
         </mat-form-field>
 
