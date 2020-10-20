@@ -1,0 +1,109 @@
+@use '../../../../assets/scss/helpers/rem' as r;
+@use '../../../../assets/scss/utils/colors' as c;
+
+.mat-card {
+  transition: background-color 1.2s;
+
+  &.bg-purple {
+    background-color: c.$light-purple;
+  }
+
+  .mat-card-header {
+    align-items: center;
+
+    .mat-card-avatar {
+      .mat-icon {
+        width: r.rem(40);
+        height: r.rem(40);
+
+        font-size: r.rem(40);
+      }
+    }
+
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      margin-right: auto;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .title,
+    .sub-title {
+      display: inline-block;
+    }
+
+    .title {
+      font-size: r.rem(20);
+      font-weight: 500;
+      margin-bottom: r.rem(5);
+    }
+
+    .sub-title {
+      font-size: r.rem(14);
+    }
+
+    .data-info {
+      font-size: r.rem(16);
+      margin-right: r.rem(30);
+    }
+
+    .mat-mini-fab:last-child {
+      margin-left: 15px;
+    }
+
+    .dark-button {
+      background-color: c.$black-components;
+    }
+  }
+
+  input[type="datetime-local"] {
+    max-width: r.rem(139);
+    font-size: r.rem(16);
+    margin-right: r.rem(30);
+  }
+}
+
+.mat-card-content {
+  margin-top: r.rem(16);
+  margin-bottom: 0;
+
+  .mat-form-field {
+    width: 100%;
+  }
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+@media screen and (max-width: 764px) {
+  .text-wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    min-width: r.rem(75);
+  }
+
+  .data-info {
+    font-size: r.rem(14) !important;
+    margin-right: r.rem(5) !important;
+  }
+
+  .controls-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: r.rem(88);
+
+    button {
+      margin-left: 0 !important;
+    }
+  }
+}

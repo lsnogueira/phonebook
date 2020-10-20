@@ -1,0 +1,51 @@
+{
+  "appointments": [
+    {
+      "id": 1,
+      "telNumbers": [
+        953823288
+      ],
+      "message": "bla bla bla bla bla bla bla bla bla bla bla bla bla",
+      "sendTime": "2020-10-20T12:30"
+    },
+    {
+      "id": 2,
+      "message": "mensagem legalzinha",
+      "sendTime": "2020-10-20T09:15",
+      "telNumbers": [
+        923123134,
+        923234221
+      ]
+    },
+    {
+      "id": 3,
+      "message": "testee",
+      "sendTime": "2020-10-20T11:48",
+      "telNumbers": [
+        923233232
+      ]
+    },
+    {
+      "id": 4,
+      "message": "sdadsqwe",
+      "sendTime": "2020-10-20T16:20",
+      "telNumbers": [
+        953326478,
+        912442231,
+        11943325323,
+        5511943325323
+      ]
+    },
+    {
+      "id": 5,
+      "message": "testeeeeee",
+      "sendTime": "2020-10-08T22:20",
+      "telNumbers": [
+        953326478,
+        912442231,
+        11943325323,
+        5511943325323
+      ]
+    }
+  ]
+}

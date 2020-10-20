@@ -1,27 +1,47 @@
 # Phonebook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+Web app para agendamento de SMS criado com Angular versão 10.1.7.
 
-## Development server
+## Descrição
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para o agendamento de SMS o usuário poderá informar um ou mais números separados por vírgular ou utilizar um arquivo CSV com números de telefone.
 
-## Code scaffolding
+Arquivo em que utilizei de exemplo para importação [aqui](https://docs.google.com/spreadsheets/d/10ryiVin0ZWjjv_sYc9voIzXKZx97QdmThxbtmwgwynU/edit?usp=sharing).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Como iniciar o projeto?
+Antes é necessário instalar a dependência [json-server](https://www.npmjs.com/package/json-server) globalmente, ela está sendo utilizada para persistência dos dados.
 
-## Build
+```
+npm install -g json-server
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Pré-requisitos
+Para inicialização do projeto é necessário instalar suas dependências, ou seja, *node_modules*. Para isto, basta iniciar o comando abaixo:
 
-## Running unit tests
+```
+npm i
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Inicialização
+O projeto possui um script de inicialização configurado. No script de start já é iniciado o *json-server* em seguida a aplicação Angular é iniciada.
 
-## Running end-to-end tests
+Então é somente rodar o comando abaixo:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+npm start
+```
 
-## Further help
+Após o processo, o console deve printar *Compiled Successfull*.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Como rodar os testes?
+Para rodar os teste unitários deste projeto basta executar o comando abaixo.
+
+```
+ng test --watch=true --browsers=ChromeHeadless
+```
+
+## Tecnologias utilizadas
+
+* [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+* [Angular Material](https://material.angular.io/) version 10.2.5.
+* [JSON Server](https://www.npmjs.com/package/json-server) version 0.16.2.

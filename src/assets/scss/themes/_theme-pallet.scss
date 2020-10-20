@@ -1,0 +1,32 @@
+$custom-primary-theme: (
+  50: lighten($light-purple, 5%),
+  100: lighten($light-purple, 4%),
+  200: lighten($light-purple, 3%),
+  300: lighten($light-purple, 2%),
+  400: lighten($light-purple, 1%),
+  500: $light-purple,
+  600: darken($light-purple, 1%),
+  700: darken($light-purple, 2%),
+  800: darken($light-purple, 3%),
+  900: darken($light-purple, 4%),
+  A100: darken($light-purple, 5%),
+  A200: darken($light-purple, 6%),
+  A400: darken($light-purple, 7%),
+  A700: darken($light-purple, 8%),
+  contrast: (
+    50: $light-black,
+    100: $light-black,
+    200: $light-black,
+    300: $text-color,
+    400: $text-color,
+    500: $text-color,
+    600: $text-color,
+    700: $text-color,
+    800: $text-color,
+    900: $text-color,
+    A100: $light-black,
+    A200: $text-color,
+    A400: $text-color,
+    A700: $text-color
+  )
+);
