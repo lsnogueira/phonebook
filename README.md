@@ -1,27 +1,42 @@
 # Phonebook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+Web app para agendamento de SMS criado com Angular versão 10.1.7.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Como iniciar o projeto?
+Antes é necessário instalar a dependência [json-server](https://www.npmjs.com/package/json-server) globalmente, ela está sendo utilizada para persistência dos dados.
 
-## Code scaffolding
+```
+npm install -g json-server
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Pré-requisitos
+Para inicialização do projeto é necessário instalar suas dependências, ou seja, *node_modules*. Para isto, basta iniciar o comando abaixo:
 
-## Build
+```
+npm i
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Inicialização
+O projeto possui um script de inicialização configurado. No script de start já é iniciado o *json-server* em seguida a aplicação Angular é iniciada.
 
-## Running unit tests
+Então é somente rodar o comando abaixo:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+npm start
+```
 
-## Running end-to-end tests
+Após o processo, o console deve printar *Compiled Successfull*.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Como rodar os testes?
+Para rodar os teste unitários deste projeto basta executar o comando abaixo.
 
-## Further help
+```
+ng test --watch=true --browsers=ChromeHeadless
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Tecnologias utilizadas
+
+* [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
+* [Angular Material](https://material.angular.io/) version 10.2.5.
+* [JSON Server](https://www.npmjs.com/package/json-server) version 0.16.2.
