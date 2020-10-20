@@ -2,7 +2,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { Directive, Input, OnDestroy, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Subject } from 'rxjs';
-import { map, takeUntil, filter } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 
 @Directive({
   selector: '[permanentAt]',
@@ -32,6 +32,5 @@ export class ResponsiveSidenavDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
   }
 }
